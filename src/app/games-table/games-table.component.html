@@ -1,0 +1,37 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!--título -->
+      <ng-container matColumnDef="titulo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Título</th>
+        <td mat-cell *matCellDef="let row">{{ row.titulo }}</td>
+      </ng-container>
+  
+      <!--ano de lançamento -->
+      <ng-container matColumnDef="anoLancamento">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Ano de Lançamento</th>
+        <td mat-cell *matCellDef="let row">{{ row.anoLancamento }}</td>
+      </ng-container>
+  
+      <!-- desenvolvedora -->
+      <ng-container matColumnDef="desenvolvedora">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Desenvolvedora</th>
+        <td mat-cell *matCellDef="let row">{{ row.desenvolvedora }}</td>
+      </ng-container>
+  
+      <!-- plataforma -->
+      <ng-container matColumnDef="plataforma">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Plataforma</th>
+        <td mat-cell *matCellDef="let row">{{ row.plataforma }}</td>
+      </ng-container>
+
+      
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <!-- Pagina -->
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  
